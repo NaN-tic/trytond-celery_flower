@@ -19,7 +19,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
 
         <!-- Groups -->
         <record model="res.group" id="group_flower_admin">
-            <field name="name">Flower Administration</field>
+            <field name="name">Celery Flower Administration</field>
         </record>
         <record model="res.user-res.group" id="user_admin_group_flower_admin">
             <field name="user" ref="res.user_admin"/>
@@ -28,7 +28,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
 
         <!-- Menu Top -->
         <menuitem parent="ir.menu_administration"
-            name="Flower" id="menu_flower"/>
+            name="Celery Flower" id="menu_flower"/>
         <record model="ir.ui.menu-res.group" id="menu_flower_group_flower_admin">
             <field name="menu" ref="menu_flower"/>
             <field name="group" ref="group_flower_admin"/>
@@ -47,7 +47,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         </record>
 
         <record model="ir.action.act_window" id="act_flower_workers_form">
-            <field name="name">Flower workers</field>
+            <field name="name">Celery workers</field>
             <field name="res_model">flower.workers</field>
         </record>
         <record model="ir.action.act_window.view" id="act_flower_workers_form_view1">
@@ -76,7 +76,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         </record>
 
         <record model="ir.action.act_window" id="act_flower_tasks_form">
-            <field name="name">Flower Tasks</field>
+            <field name="name">Celery Tasks</field>
             <field name="res_model">flower.tasks</field>
             <field name="search_value"
                 eval="[('received', '>=', DateTime(hour=0, minute=0, second=0, microsecond=0, delta_years=-1))]"
