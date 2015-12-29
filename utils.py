@@ -4,7 +4,7 @@
 import requests
 from datetime import datetime, timedelta
 from trytond.config import config as config_, parse_uri
-from trytond.exceptions import UserError, UserWarning
+from trytond.exceptions import UserError
 
 FLOWER_URI = parse_uri(config_.get('celery', 'flower', default='http://localhost:5555'))
 
