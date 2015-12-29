@@ -1,16 +1,12 @@
 # This file is part flower module for Tryton.
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
-import requests
 import json
 import pytz
-from datetime import datetime, timedelta
-from dateutil import parser
 from trytond.model import ModelView, fields
 from trytond.pool import Pool, PoolMeta
 from trytond.rpc import RPC
 from trytond.transaction import Transaction
-from trytond.pyson import Eval, If, Equal
 from .utils import *
 
 __all__ = ['FlowerWorkers', 'FlowerTasks']
