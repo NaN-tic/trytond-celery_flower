@@ -24,8 +24,6 @@ celery.config_from_object('celeryconfig')
 @celery.task(base=TrytonTask)
 def generate_requests(user_id=None):
     """Purchase Generate Requests"""
-    print "Dins generate requests tasks"
-    print generate_requests.request.id
     pool = Pool()
     User = pool.get('res.user')
     PurchaseRequest = pool.get('purchase.request')
@@ -43,4 +41,3 @@ def generate_requests(user_id=None):
         Transaction().set_context(
             User.get_preferences(context_only=True)):
         PurchaseRequest.generate_requests()
-    print "call PurchaseRequest.generate_requests()"
