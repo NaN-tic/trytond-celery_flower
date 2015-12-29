@@ -1,0 +1,127 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:flower.tasks,args:"
+msgid "args"
+msgstr "args"
+
+msgctxt "field:flower.tasks,failed:"
+msgid "Failed"
+msgstr "Fallat"
+
+msgctxt "field:flower.tasks,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:flower.tasks,kwargs:"
+msgid "kwargs"
+msgstr "kwargs"
+
+msgctxt "field:flower.tasks,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:flower.tasks,received:"
+msgid "Received"
+msgstr "Rebut"
+
+msgctxt "field:flower.tasks,result:"
+msgid "Result"
+msgstr "Resultat"
+
+msgctxt "field:flower.tasks,retries:"
+msgid "Retries"
+msgstr "Intents"
+
+msgctxt "field:flower.tasks,runtime:"
+msgid "Runtime"
+msgstr "Runtime"
+
+msgctxt "field:flower.tasks,started:"
+msgid "Started"
+msgstr "Iniciat"
+
+msgctxt "field:flower.tasks,state:"
+msgid "State"
+msgstr "Estat"
+
+msgctxt "field:flower.tasks,state_icon:"
+msgid "State Icon"
+msgstr "Icona estat"
+
+msgctxt "field:flower.tasks,succeeded:"
+msgid "Succeeded"
+msgstr "Realitzat"
+
+msgctxt "field:flower.tasks,traceback:"
+msgid "Traceback"
+msgstr "Traceback"
+
+msgctxt "field:flower.tasks,uuid:"
+msgid "UUID"
+msgstr "UUID"
+
+msgctxt "field:flower.tasks,worker:"
+msgid "Worker"
+msgstr "Worker"
+
+msgctxt "field:flower.workers,conf:"
+msgid "Configuration"
+msgstr "Configuració"
+
+msgctxt "field:flower.workers,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:flower.workers,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:flower.workers,stats:"
+msgid "Stats"
+msgstr "Estats"
+
+msgctxt "model:flower.tasks,name:"
+msgid "Flower Tasks"
+msgstr "Tasques Flower"
+
+msgctxt "model:flower.workers,name:"
+msgid "Flower Workers"
+msgstr "Workers Flower"
+
+msgctxt "model:ir.action,name:act_flower_tasks_form"
+msgid "Flower Tasks"
+msgstr "Tasques Flower"
+
+msgctxt "model:ir.action,name:act_flower_workers_form"
+msgid "Flower workers"
+msgstr "Workers Flower"
+
+msgctxt "model:ir.ui.menu,name:menu_flower"
+msgid "Flower"
+msgstr "Flower"
+
+msgctxt "model:ir.ui.menu,name:menu_flower_tasks_form"
+msgid "Flower Tasks"
+msgstr "Tasques Flower"
+
+msgctxt "model:ir.ui.menu,name:menu_flower_workers_form"
+msgid "Flower workers"
+msgstr "Workers Flower"
+
+msgctxt "model:res.group,name:group_flower_admin"
+msgid "Flower Administration"
+msgstr "Administració Flower"
+
+msgctxt "view:flower.tasks:"
+msgid "Flower Task"
+msgstr "Tasca Flower"
+
+msgctxt "view:flower.workers:"
+msgid "Flower Task"
+msgstr "Tasca Flower"
+
+msgctxt "view:flower.workers:"
+msgid "Flower Worker"
+msgstr "Worker Flower"

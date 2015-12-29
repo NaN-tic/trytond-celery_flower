@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!-- This file is part celery_flower module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <!-- Icons -->
+        <record model="ir.ui.icon" id="flower_success_icon">
+            <field name="name">flower-success</field>
+            <field name="path">icons/success.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="flower_error_icon">
+            <field name="name">flower-error</field>
+            <field name="path">icons/error.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="flower_alert_icon">
+            <field name="name">flower-alert</field>
+            <field name="path">icons/alert.svg</field>
+        </record>
+
+        <!-- Groups -->
+        <record model="res.group" id="group_flower_admin">
+            <field name="name">Flower Administration</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_flower_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_flower_admin"/>
+        </record>
+
+        <!-- Menu Top -->
+        <menuitem parent="ir.menu_administration"
+            name="Flower" id="menu_flower"/>
+        <record model="ir.ui.menu-res.group" id="menu_flower_group_flower_admin">
+            <field name="menu" ref="menu_flower"/>
+            <field name="group" ref="group_flower_admin"/>
+        </record>
+
+        <!-- flower.workers -->
+        <record model="ir.ui.view" id="flower_workers_view_form">
+            <field name="model">flower.workers</field>
+            <field name="type">form</field>
+            <field name="name">flower_workers_form</field>
+        </record>
+        <record model="ir.ui.view" id="flower_workers_view_tree">
+            <field name="model">flower.workers</field>
+            <field name="type">tree</field>
+            <field name="name">flower_workers_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_flower_workers_form">
+            <field name="name">Flower workers</field>
+            <field name="res_model">flower.workers</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_flower_workers_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="flower_workers_view_tree"/>
+            <field name="act_window" ref="act_flower_workers_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_flower_workers_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="flower_workers_view_form"/>
+            <field name="act_window" ref="act_flower_workers_form"/>
+        </record>
+        <menuitem parent="menu_flower" action="act_flower_workers_form"
+            id="menu_flower_workers_form"/>
+
+        <!-- flower.tasks -->
+        <record model="ir.ui.view" id="flower_tasks_view_form">
+            <field name="model">flower.tasks</field>
+            <field name="type">form</field>
+            <field name="name">flower_tasks_form</field>
+        </record>
+        <record model="ir.ui.view" id="flower_tasks_view_tree">
+            <field name="model">flower.tasks</field>
+            <field name="type">tree</field>
+            <field name="name">flower_tasks_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_flower_tasks_form">
+            <field name="name">Flower Tasks</field>
+            <field name="res_model">flower.tasks</field>
+            <field name="search_value"
+                eval="[('received', '>=', DateTime(hour=0, minute=0, second=0, microsecond=0, delta_years=-1))]"
+                pyson="1"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_flower_tasks_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="flower_tasks_view_tree"/>
+            <field name="act_window" ref="act_flower_tasks_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_flower_tasks_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="flower_tasks_view_form"/>
+            <field name="act_window" ref="act_flower_tasks_form"/>
+        </record>
+        <menuitem parent="menu_flower" action="act_flower_tasks_form"
+            id="menu_flower_tasks_form"/>
+
+        <!-- Access -->
+        <record model="ir.model.access" id="access_flower_workers">
+            <field name="model" search="[('model', '=', 'flower.workers')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_flower_tasks">
+            <field name="model" search="[('model', '=', 'flower.tasks')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+    </data>
+</tryton>

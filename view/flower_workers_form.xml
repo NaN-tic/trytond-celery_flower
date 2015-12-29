@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- This file is part celery_flower module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<form string="Flower Worker" col="4">
+    <label name="name"/>
+    <field name="name"/>
+    <separator name="stats" colspan="4"/>
+    <field name="stats" colspan="4"/>
+    <separator name="conf" colspan="4"/>
+    <field name="conf" colspan="4"/>
+</form>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- This file is part celery_flower module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tree string="Flower Task">
+    <field name="name"/>
+    <field name="uuid"/>
+    <field name="args"/>
+    <field name="kwargs"/>
+    <field name="result"/>
+    <field name="received" widget="date"/>
+    <field name="received" widget="time"/>
+    <field name="state" icon="state_icon" expand="1"/>
+</tree>

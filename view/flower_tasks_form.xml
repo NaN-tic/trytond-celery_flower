@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- This file is part celery_flower module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<form string="Flower Task" col="4">
+    <group col="2" colspan="2" id="basic">
+        <label name="name"/>
+        <field name="name"/>
+        <label name="uuid"/>
+        <field name="uuid"/>
+        <label name="state"/>
+        <field name="state"/>
+        <label name="args"/>
+        <field name="args"/>
+        <label name="kwargs"/>
+        <field name="kwargs"/>
+        <label name="result"/>
+        <field name="result"/>
+    </group>
+    <group col="2" colspan="2" id="advanced">
+        <label name="received"/>
+        <field name="received"/>
+        <label name="started"/>
+        <field name="started"/>
+        <label name="succeeded"/>
+        <field name="succeeded"/>
+        <label name="failed"/>
+        <field name="failed"/>
+        <label name="retries"/>
+        <field name="retries"/>
+        <label name="runtime"/>
+        <field name="runtime"/>
+    </group>
+    <newline/>
+    <separator name="traceback" colspan="4"/>
+    <field name="traceback" colspan="4"/>
+</form>
