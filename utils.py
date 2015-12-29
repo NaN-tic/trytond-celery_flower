@@ -31,10 +31,6 @@ def flower_response(uri):
         raise UserError('Http Rrror', str(e.message))
     except requests.exceptions.ConnectionError as e:
         raise UserError('Connection Error', str(e.message))
-    except requests.exceptions.ConnectTimeout as e:
-        raise UserError('Connection Timeout', str(e.message))
-    except requests.exceptions.ReadTimeout as e:
-        raise UserError('Read Timeout', str(e.message))
     except requests.exceptions.SSLError as e:
         raise UserError('SSL Error', str(e.message))
     except:
@@ -56,6 +52,11 @@ def flower_json_hour(dt):
     # To fix, rest an hour respect to tz
     new_dt = dt + timedelta(hours=-1)
     return new_dt.strftime('%Y-%m-%d %H:%M')
-    
-    
-    #~ return datetime.fromtimestamp(hour, tz=timezone) + timedelta(hours=1)
+
+def search_not_like(value):
+    'Remove % characters from like'
+    if value[:1] == '%':
+        value = value[1:]
+    if value[-1:] == '%':
+        value = value[:-1]
+    return value

@@ -121,21 +121,34 @@ class FlowerTasks(ModelView):
         limit: maximum number of tasks
         workername: filter task by workername
         taskname: filter tasks by taskname
-        state: filter tasks by state
+        statisinstance(e: filter tasks by state
         """
-        request_params = []
+        # create new list with values from search toolbar and search domain
+        conds = []
         for d in domain:
+            if isinstance(d[0], list):
+                for c in d:
+                    if isinstance(c, list):
+                        conds.append(c)
+            else:
+                conds.append(d)
+
+        request_params = []
+        for d in conds:
+            if not isinstance(d, list):
+                continue
+
             if d and d[0] == 'name':
-                request_params.append('taskname=%s' % d[2][1:-1])
+                request_params.append('taskname=%s' % search_not_like(d[2]))
             if d and d[0] == 'uuid':
-                request_params.append('task-id=%s' % d[2][1:-1])
+                request_params.append('task-id=%s' % search_not_like(d[2]))
             if d and d[0] == 'received':
                 if d[1] == '<=':
                     request_params.append('received-end=%s' % flower_json_hour(d[2]))
                 else:
                     request_params.append('received-start=%s' % flower_json_hour(d[2]))
             if d and d[0] == 'state':
-                request_params.append('state=%s' % d[2][1:-1])
+                request_params.append('state=%s' % search_not_like(d[2]))
 
         if request_params:
             uri_search = '{}/tasks?{}'.format(API_URI, '&'.join(request_params))
