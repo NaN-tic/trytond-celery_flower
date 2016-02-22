@@ -154,8 +154,9 @@ class FlowerTasks(ModelView):
         data = flower_response(uri_search)
 
         res = []
-        for k, _ in data.items():
-            res.append(k)
+        if data:
+            for k, _ in data.items():
+                res.append(k)
 
         return res
 
