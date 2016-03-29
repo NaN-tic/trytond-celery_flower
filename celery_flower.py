@@ -4,13 +4,12 @@
 import json
 import pytz
 from trytond.model import ModelView, fields
-from trytond.pool import Pool, PoolMeta
+from trytond.pool import Pool
 from trytond.rpc import RPC
 from trytond.transaction import Transaction
 from .utils import *
 
 __all__ = ['FlowerWorkers', 'FlowerTasks']
-__metaclass__ = PoolMeta
 
 _ICONS = {
     'SUCCESS': 'flower-success',
